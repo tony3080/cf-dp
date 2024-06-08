@@ -14,27 +14,27 @@
 ## 配置教程
 
 1. 使用 Cloudflare Worker Host：仅支持代理一个注册表
-   方法：
-   替换`${workername}.${username}.workers.dev/`为Cloudflare生成的路由，如`cloudflare-docker-proxy.xxxx.workers.dev/`
+   - 方法：
+     - 1. 替换`${workername}.${username}.workers.dev/`为Cloudflare生成的路由，如`cloudflare-docker-proxy.xxxx.workers.dev/`
    ```javascript
    const routes = {
      "${workername}.${username}.workers.dev/": "https://registry-1.docker.io",
    };
    ```
    
-3. 使用自定义域或者路由：支持按主机代理多个注册管理机构路由（部分机构含有多种）
+2. 使用自定义域或者路由：支持按主机代理多个注册管理机构路由（部分机构含有多种）
    - 方法1：
-     1. 在 Cloudflare 上托管您的域`DNS`
-     2. 添加`xxx.example.com`的`A`记录到`192.0.2.1`(IP没要求，随便填写就行，最后都会被worker截断，不会访问到填入的ip下)
-     3. 将此项目部署到 Cloudflare Workers
-     4. 添加 `xxx.example.com/*` 到 `路由`里
-     5. 添加更多记录并根据需要修改配置，（左边为你的域名，右边为目标网站，左边每一个新域名，都需要单独做一次步骤2与步骤4）
+     - 1. 在 Cloudflare 上托管您的域`DNS`
+     - 2. 添加`xxx.example.com`的`A`记录到`192.0.2.1`(IP没要求，随便填写就行，最后都会被worker截断，不会访问到填入的ip下)
+     - 3. 将此项目部署到 Cloudflare Workers
+     - 4. 添加 `xxx.example.com/*` 到 `路由`里
+     - 5. 添加更多记录并根据需要修改配置，（左边为你的域名，右边为目标网站，左边每一个新域名，都需要单独做一次步骤b与步骤d）
 
 
    - 方法2：
-     1. 将此项目部署到 Cloudflare Workers
-     2. 添加`xxx.example.com`到`自定义域`
-     3. 添加更多记录并根据需要修改配置，（左边为访问域名，右边为目标网站，左边每一个新域名都需要单独做一次步骤2）
+     - 1. 将此项目部署到 Cloudflare Workers
+     - 2. 添加`xxx.example.com`到`自定义域`
+     - 3. 添加更多记录并根据需要修改配置，（左边为访问域名，右边为目标网站，左边每一个新域名都需要单独做一次步骤b）
 
    - 需要修改的源代码
    ```javascript
