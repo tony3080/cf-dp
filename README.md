@@ -46,5 +46,5 @@
 
 ## 目前发现存在的问题
 
-1. 部分需要docker官方发布的容器，如`hello-world`会提示：
+1. 部分`docker`官方发布的容器，如`hello-world`会`pull`失败，出现提示：
    - `Error response from daemon: pull access denied for xxx.example.com/hello-world, repository does not exist or may require 'docker login': denied: requested access to the resource is denied`
