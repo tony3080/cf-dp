@@ -3,16 +3,12 @@ addEventListener("fetch", (event) => {
   event.respondWith(handleRequest(event.request));
 });
 
+// 修改这里，可添加多个镜像站，确定好镜像站存活性即可
 const routes = {
-  "docker.libcuda.so": "https://registry-1.docker.io",
-  "quay.libcuda.so": "https://quay.io",
-  "gcr.libcuda.so": "https://gcr.io",
-  "k8s-gcr.libcuda.so": "https://k8s.gcr.io",
-  "k8s.libcuda.so": "https://registry.k8s.io",
-  "ghcr.libcuda.so": "https://ghcr.io",
-  "cloudsmith.libcuda.so": "https://docker.cloudsmith.io",
+  "docker.example.com": "https://registry-1.docker.io",
 };
 
+// 以下部分为运行逻辑
 function routeByHosts(host) {
   if (host in routes) {
     return routes[host];
