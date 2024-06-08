@@ -34,13 +34,13 @@
    - 方法2：
      - 1. 将此项目部署到 Cloudflare Workers
      - 2. 添加`xxx.example.com`到`自定义域`
-     - 3. 添加更多记录并根据需要修改配置，（左边为访问域名，右边为目标网站，左边每一个新域名都需要单独做一次步骤b）
+     - 3. 添加更多记录并根据需要修改配置，（左边为访问域名，右边为目标网站，左边每一个新域名，都需要单独做一次步骤b）
 
    - 需要修改的源代码
    ```javascript
    const routes = {
         "docker.example.com": "https://registry-1.docker.io",
-         
+         // 允许添加单个站点  
       };
    ```
 
