@@ -48,3 +48,4 @@
 
 1. 部分`docker`官方发布的容器，如`hello-world`会`pull`失败，出现提示：
    - `Error response from daemon: pull access denied for xxx.example.com/hello-world, repository does not exist or may require 'docker login': denied: requested access to the resource is denied`
+   - 出现此问题，请配置登录`docker`的账号，辅助通过认证
