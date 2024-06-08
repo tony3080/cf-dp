@@ -40,7 +40,7 @@
    ```javascript
    const routes = {
         "docker.example.com": "https://registry-1.docker.io",
-         // 允许添加单个站点  
+         // 允许添加多个站点  
       };
    ```
 
