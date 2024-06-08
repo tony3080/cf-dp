@@ -15,7 +15,7 @@
 
 1. 使用 Cloudflare Worker Host：仅支持代理一个注册表
    方法：
-    1. 替换`${workername}.${username}.workers.dev/`为Cloudflare生成的路由，如`cloudflare-docker-proxy.xxxx.workers.dev/`
+   替换`${workername}.${username}.workers.dev/`为Cloudflare生成的路由，如`cloudflare-docker-proxy.xxxx.workers.dev/`
    ```javascript
    const routes = {
      "${workername}.${username}.workers.dev/": "https://registry-1.docker.io",
